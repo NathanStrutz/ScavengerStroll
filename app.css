@@ -1,0 +1,10 @@
+body {
+  background-color: #82d4f3;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1em;
+}
