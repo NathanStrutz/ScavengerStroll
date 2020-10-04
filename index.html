@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="app.css" />
   </head>
   <body>
-    <nav>
-      <h1><img src="images/countyparks.png" clas="img-fluid" /></h1>
+    <header>
+      <img src="images/countyparks.png" clas="img-fluid" />
       <h1>Scavenger Stroll</h1>
-      <h1><img src="images/quadpod.png" clas="img-fluid" /></h1>
-    </nav>
+      <img src="images/quadpod.png" clas="img-fluid" />
+    </header>
 
-    <div id="app">
-      <div v-for="item in items.park"><input type="checkbox" /> {{ item.name }} - {{ item.description }}</div>
-    </div>
+    <main>
+      <h2>Information</h2>
+      <p>Thanks for checking out our Scavenger Stroll!</p>
 
-    <script src="https://unpkg.com/vue"></script>
-    <script src="app.js"></script>
+      <p>To Do: Add an image here to select <a href="park.html">Park</a> or <a href="nature.html">Nature</a> scavenger lists.</p>
+    </main>
+
   </body>
 </html>
