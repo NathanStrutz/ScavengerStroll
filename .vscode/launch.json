@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "C://Users//Student//Documents//GitHub//ScavengerStroll//index.html",
-//           "url": "http://localhost:8080",
+//          "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
         }
     ]
