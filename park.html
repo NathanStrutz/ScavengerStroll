@@ -21,7 +21,7 @@
 
     <main id="app">
       <div v-for="item in items.park" class="item">
-        <img v-if="item.image" v-bind:src="`images/${item.image}`" height="25" height="25" />
+        <img v-if="item.image" v-bind:src="`images/${item.image}`" height="40" width="40" />
         <label>
           <input type="checkbox" v-model="item.completed" v-bind:class="{completed: item.completed}" /> 
           <span v-bind:class="{completed: item.completed}">{{ item.name }}</span>
