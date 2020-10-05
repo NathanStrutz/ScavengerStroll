@@ -14,13 +14,22 @@ main {
 .item {
   display: flex;
 }
+.item > * {
+  margin-right: 0.3em;
+}
+
+.item img,
+.item span.no-image {
+  width: 25px;
+  height: 25px;
+}
 span.completed {
   text-decoration: line-through;
 }
 input.completed {
   border-color: green;
 }
-input[type=checkbox] {
+input[type="checkbox"] {
   width: 25px;
   height: 25px;
 }
