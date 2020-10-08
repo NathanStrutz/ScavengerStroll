@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset=z"utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scavenger Stroll</title>
     <link
@@ -14,21 +14,12 @@
   </head>
   <body>
     <header>
-      <h1><img src="images/countyparks.png" clas="img-fluid" /></h1>
+      <img src="images/countyparks.png" clas="img-fluid" />
       <h1>Scavenger Stroll</h1>
-      <h1><img src="images/quadpod.png" clas="img-fluid" /></h1>
+      <img src="images/quadpod.png" clas="img-fluid" />
     </header>
 
-    <main id="app">
-      <div v-for="item in items.nature" class="item">
-        <img v-if="item.image" v-bind:src="`images/${item.image}`" />
-        <span v-else class="no-image"></span>
-        <label>
-          <input type="checkbox" v-model="item.completed" v-bind:class="{completed: item.completed}" />
-          <span v-bind:class="{completed: item.completed}">{{ item.name }}</span>
-        </label>
-      </div>
-    </main>
+    <main id="app" class="list-group" v-cloak></main>
 
     <script src="https://unpkg.com/vue"></script>
     <script src="app.js"></script>
