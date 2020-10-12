@@ -1,10 +1,10 @@
 const ScavengerItem = Vue.component("ScavengerItem", {
   template: `
-    <div :class="classes" v-on:click="select(item)">
-      <img v-if="item.image" v-bind:src="'images/'+item.image" />
+    <div :class="classes" @click="select(item)">
+      <img v-if="item.image" :src="'images/'+item.image" />
       <span v-else class="no-image"></span>
-      <input type="checkbox" v-model="item.completed" v-bind:class="{completed: item.completed}" />
-      <span v-bind:class="{completed: item.completed}">{{ item.name }}</span>
+      <input type="checkbox" v-model="item.completed" :class="{completed: item.completed}" />
+      <span :class="{completed: item.completed}">{{ item.name }}</span>
     </div>
   `,
   props: {
@@ -57,7 +57,7 @@ const ParkScavengerItems = Vue.component("ParkScavengerItems", {
       items: [
         { name: "Bikes", image: "IMG_5618.JPG", completed: false },
         { name: "Playground", image: "IMG_5628.JPG", completed: false },
-        { name: "Trashcan", image: "IMG_1618.JPEG", completed: false },
+        { name: "Trash can", image: "IMG_1618.JPEG", completed: false },
         { name: "Wanamaker Oak", image: "IMG_5442.JPG", completed: false },
         { name: "Park Center sign ", image: "IMG_5619.JPG", completed: false },
         { name: "Vollyball net", image: "IMG_5603.JPG", completed: false },
