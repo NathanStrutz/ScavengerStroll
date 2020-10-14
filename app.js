@@ -1,7 +1,7 @@
 const ScavengerItem = Vue.component("ScavengerItem", {
   template: `
     <div :class="classes" @click="select(item)">
-      <img v-if="item.image" :src="'images/'+item.image" />
+      <img v-if="item.image" :src="'images/'+item.image" @click="imageClick" />
       <span v-else class="no-image"></span>
       <input type="checkbox" v-model="item.completed" :class="{completed: item.completed}" />
       <span :class="{completed: item.completed}">{{ item.name }}</span>
@@ -12,14 +12,19 @@ const ScavengerItem = Vue.component("ScavengerItem", {
   },
   computed: {
     classes() {
-      // return ["list-group-item", "item", item.completed ? "completed" : ""];
-
-      return `list-group-item item ${this.item.completed ? "completed" : ""}`;
+      return `list-group-item item ${this.item.completed ? "completed" : "incomplete"}`;
     },
   },
   methods: {
     select() {
       this.item.completed = !this.item.completed;
+    },
+    /**
+     * Image click event handler
+     * @param {Event} e Window click event
+     */
+    imageClick(e) {
+      e.stopPropagation();
     },
   },
 });
