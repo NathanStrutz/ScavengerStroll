@@ -11,7 +11,6 @@ header {
   justify-content: space-between;
   background-color: white;
   padding: 1em;
-  margin-bottom: 1em;
 }
 header h1 {
   word-wrap: none;
@@ -20,7 +19,7 @@ main.home {
   margin: 1em;
 }
 main {
-  margin: 0 1em 1em 0;
+  margin: 1em 0.5em;
 }
 .item {
   display: flex;
