@@ -52,6 +52,11 @@ input[type="checkbox"] {
   height: 25px;
 }
 
+footer {
+  margin: 2em;
+  text-align: center;
+}
+
 /* Try making the header responsive */
 @media (max-width: 1200px) {
   header img {
