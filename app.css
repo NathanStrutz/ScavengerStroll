@@ -2,17 +2,44 @@ body {
   background-color: #82d4f3;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   background-color: white;
   padding: 1em;
 }
-main {
+header h1 {
+  word-wrap: none;
+}
+main.home {
   margin: 1em;
+}
+main {
+  margin: 1em 0.5em;
 }
 .item {
   display: flex;
+  height: 60px;
+  cursor: pointer;
+}
+.item > * {
+  margin-right: 0.3em;
+}
+.item label {
+  vertical-align: middle;
+}
+
+.item img,
+.item span.no-image {
+  width: 60px;
+  height: 60px;
+}
+.item.completed {
+  background-color: #eee;
 }
 span.completed {
   text-decoration: line-through;
@@ -20,7 +47,35 @@ span.completed {
 input.completed {
   border-color: green;
 }
-input[type=checkbox] {
+input[type="checkbox"] {
   width: 25px;
   height: 25px;
+}
+
+footer {
+  margin: 2em;
+  text-align: center;
+}
+
+/* Try making the header responsive */
+@media (max-width: 1200px) {
+  header img {
+    height: 80px;
+  }
+}
+@media (max-width: 960px) {
+  header img {
+    height: 70px;
+  }
+}
+@media (max-width: 680px) {
+  header img {
+    height: 60px;
+  }
+}
+@media (max-width: 550px) {
+  h1.display-1 {
+    font-size: 20pt;
+    line-height: 40pt;
+  }
 }
