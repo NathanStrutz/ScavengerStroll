@@ -28,6 +28,27 @@ section.back-button a {
 main.home {
   margin: 1em;
 }
+#big-buttons {
+  display: flex;
+}
+#big-buttons a.park {
+  background-color: #f6eb13;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#big-buttons a.nature {
+  background-color: #35b449;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#big-buttons a {
+  width: 50%;
+  padding: 15px;
+  border-radius: 10px;
+  color: #000;
+  font-size: 25pt;
+  text-decoration: none;
+}
 main {
   margin: 1em 0.5em;
 }
