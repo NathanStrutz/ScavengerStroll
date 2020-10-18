@@ -15,6 +15,16 @@ header {
 header h1 {
   word-wrap: none;
 }
+section.back-button {
+  background-color: #fff;
+  /* border-top: 1px solid #000; */
+  margin-top: 2px;
+  padding: 5px 10px;
+}
+section.back-button a {
+  color: #000;
+}
+
 main.home {
   margin: 1em;
 }
