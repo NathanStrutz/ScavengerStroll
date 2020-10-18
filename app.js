@@ -16,7 +16,7 @@ new Vue({
         { completed: false, name: "Picnic table", image: "" },
         { completed: false, name: "Boat", image: "" },
         { completed: false, name: "Bench", image: "" },
-        { completed: false, name: "Dimond trail sign", image: "" },
+        { completed: false, name: "Dimond shaped trail sign", image: "" },
         { completed: false, name: "Pavillon", image: "" },
         { completed: false, name: "Restrooms", image: "" },
         { completed: false, name: "Big hill", image: "" }, 
