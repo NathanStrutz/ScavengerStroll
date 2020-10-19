@@ -69,13 +69,13 @@ main {
   width: 60px;
   height: 60px;
 }
-.item.completed {
+.item.complete {
   background-color: #eee;
 }
-span.completed {
+span.complete {
   text-decoration: line-through;
 }
-input.completed {
+input.complete {
   border-color: green;
 }
 input[type="checkbox"] {
