@@ -3,7 +3,7 @@
 ### An interactive website to encourage outdoor activity at Wannamaker Park
 
 ![image](./images/quadpod.png)
-![image](./images/IMG_5435.JPG)
+![image](./images/fullsize/IMG_5435.jpg)
 
 ## TO DO:
 
