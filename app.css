@@ -50,6 +50,7 @@ main.home {
   color: #000;
   font-size: 25pt;
   text-decoration: none;
+  text-align: center;
 }
 main {
   margin: 1em 0.5em;
