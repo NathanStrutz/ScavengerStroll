@@ -1,12 +1,16 @@
+// An individual scavenger item - image, checkbox, text
 const ScavengerItem = Vue.component("ScavengerItem", {
   template: `
-    <div :class="classes" @click="select(item)">
-      <a :href="'images/fullsize/'+item.image"><img v-if="item.image" :src="'images/thumbnails/'+item.image" @click="imageClick" /></a>
+    <div :class="classes" @click="select">
+      <a v-if="item.image" :href="'images/fullsize/'+item.image"><img :src="'images/thumbnails/'+item.image" @click="imageClick" /></a>
       <span v-else class="no-image"></span>
       <input type="checkbox" v-model="item.completed" :class="{completed: item.completed}" />
       <span :class="{completed: item.completed}">{{ item.name }}</span>
     </div>
   `,
+  components: {
+    FireworkParty,
+  },
   props: {
     item: Object,
   },
@@ -30,6 +34,7 @@ const ScavengerItem = Vue.component("ScavengerItem", {
   },
 });
 
+// A mix-in used by the collection of scavenger items
 const ScavengerItemsMixin = {
   data: function () {
     return {
@@ -48,19 +53,15 @@ const ScavengerItemsMixin = {
       return randomItems;
     },
     isFinished() {
-      console.log("Is Finished?", this.randomItems.filter((it) => !it.completed).length, "/", this.randomItems.length);
       return this.randomItems.filter((it) => !it.completed).length === 0;
     },
   },
   methods: {
-    getIsFinished() {
-      console.log("Is Finished?", this.randomItems.filter((it) => !it.completed).length, "/", this.randomItems.length);
-      return this.randomItems.filter((it) => !it.completed).length === 0;
-    },
     selectedItem(item) {
-      if (this.getIsFinished()) {
-        // window.startFireworks();
-        console.log("Starting Fireworks!");
+      if (this.isFinished) {
+        this.$emit("completed");
+      } else {
+        this.$emit("notCompleted");
       }
     },
   },
@@ -98,11 +99,6 @@ const ParkScavengerItems = Vue.component("ParkScavengerItems", {
         { name: "Bench swing", image: "IMG_5617.jpg", completed: false },
       ],
     };
-  },
-  methods: {
-    selectedItem(item) {
-      console.log("nomix: Is Finished?", this.randomItems.filter((it) => !it.completed).length, "/", this.randomItems.length);
-    },
   },
 });
 
@@ -143,11 +139,20 @@ const NatureScavengerItems = Vue.component("NatureScavengerItems", {
 new Vue({
   el: "#app",
   template: `
-    <component :is="pageComponent" />
+    <div>
+      <component :is="pageComponent" @notCompleted="itsNotPartyTime" @completed="itsPartyTime" />
+      <firework-party :party-time="isPartyTime" />
+    </div>
   `,
   components: {
     ParkScavengerItems,
     NatureScavengerItems,
+    FireworkParty,
+  },
+  data() {
+    return {
+      isPartyTime: false,
+    };
   },
   computed: {
     pageComponent() {
@@ -159,8 +164,11 @@ new Vue({
     },
   },
   methods: {
-    select(item) {
-      item.completed = !item.completed;
+    itsPartyTime() {
+      this.isPartyTime = true;
+    },
+    itsNotPartyTime() {
+      this.isPartyTime = false;
     },
   },
 });
