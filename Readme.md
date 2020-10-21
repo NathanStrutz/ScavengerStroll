@@ -8,9 +8,7 @@
 ## TO DO:
 
 - Click an image to zoom in
-- Create thumbnails for images
-- Vertically center checkboxes and text
-- Detach the big links on the home page
+- Vertically center ~~checkboxes and~~ text (almost there!)
 - Fireworks - celebrate!
 
 ### Then...
