@@ -33,14 +33,10 @@ main.home {
 }
 #big-buttons a.park {
   background-color: #f6eb13;
-  border-top-right-radius: 10;
-  border-bottom-right-radius: 10;
   margin: 20px;
 }
 #big-buttons a.nature {
   background-color: #35b449;
-  border-top-left-radius: 10;
-  border-bottom-left-radius: 10;
   margin: 20px;
 }
 #big-buttons a {
