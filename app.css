@@ -33,21 +33,24 @@ main.home {
 }
 #big-buttons a.park {
   background-color: #f6eb13;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-top-right-radius: 10;
+  border-bottom-right-radius: 10;
+  margin: 20px;
 }
 #big-buttons a.nature {
   background-color: #35b449;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  border-top-left-radius: 10;
+  border-bottom-left-radius: 10;
+  margin: 20px;
 }
 #big-buttons a {
-  width: 50%;
-  padding: 15px;
+  width: 100%;
+  padding: 5px;
   border-radius: 10px;
   color: #000;
   font-size: 25pt;
   text-decoration: none;
+  text-align: center;
 }
 main {
   margin: 1em 0.5em;
@@ -66,8 +69,8 @@ main {
 
 .item img,
 .item span.no-image {
-  width: 60px;
-  height: 60px;
+  width: 4x;
+  height: 45px;
 }
 .item.complete {
   background-color: #eee;
@@ -79,8 +82,8 @@ input.complete {
   border-color: green;
 }
 input[type="checkbox"] {
-  width: 25px;
-  height: 25px;
+  width: 45px;
+  height: 45px;
 }
 
 footer {
