@@ -1,27 +1,24 @@
 // An individual scavenger item - image, checkbox, text
 const ScavengerItem = Vue.component("ScavengerItem", {
   template: `
-    <div :class="classes" @click="select">
+    <div :class="itemClasses" @click="select">
       <a v-if="item.image" :href="'images/fullsize/'+item.image"><img :src="'images/thumbnails/'+item.image" @click="imageClick" /></a>
       <span v-else class="no-image"></span>
-      <input type="checkbox" v-model="item.completed" :class="{completed: item.completed}" />
-      <span :class="{completed: item.completed}">{{ item.name }}</span>
+      <input type="checkbox" :checked="item.completed" :class="{complete: item.completed}" />
+      <span :class="{complete: item.completed}">{{ item.name }}</span>
     </div>
   `,
-  components: {
-    FireworkParty,
-  },
   props: {
     item: Object,
   },
   computed: {
-    classes() {
+    itemClasses() {
       return `list-group-item item ${this.item.completed ? "complete" : "incomplete"}`;
     },
   },
   methods: {
     select() {
-      this.item.completed = !this.item.completed;
+      Vue.set(this.item, "completed", !this.item.completed);
       this.$emit("selected", this.item);
     },
     /**
@@ -38,7 +35,6 @@ const ScavengerItem = Vue.component("ScavengerItem", {
 const ScavengerItemsMixin = {
   data: function () {
     return {
-      items: [],
       numberToShow: 10,
     };
   },
@@ -53,7 +49,7 @@ const ScavengerItemsMixin = {
       return randomItems;
     },
     isFinished() {
-      return this.randomItems.filter((it) => !it.completed).length === 0;
+      return this.randomItems.reduce((a, v) => a && v.completed, true);
     },
   },
   methods: {
@@ -105,7 +101,7 @@ const ParkScavengerItems = Vue.component("ParkScavengerItems", {
 const NatureScavengerItems = Vue.component("NatureScavengerItems", {
   template: `
     <div>
-      <scavenger-item v-for="item in randomItems" :item="item" :key="item.name" />
+      <scavenger-item v-for="item in randomItems" :item="item" :key="item.name" @selected="selectedItem" />
     </div>
     `,
   mixins: [ScavengerItemsMixin],
@@ -165,10 +161,11 @@ new Vue({
   },
   methods: {
     itsPartyTime() {
-      this.isPartyTime = true;
+      // this.isPartyTime = true;
+      console.log("Celebrate");
     },
     itsNotPartyTime() {
-      this.isPartyTime = false;
+      // this.isPartyTime = false;
     },
   },
 });
