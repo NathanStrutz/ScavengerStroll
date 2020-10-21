@@ -119,7 +119,7 @@ const NatureScavengerItems = Vue.component("NatureScavengerItems", {
       items: [
         { name: "Bird (cardinal, falcon, etc.)", image: "IMG_1621.jpg", completed: false },
         { name: "Fallen tree", image: "IMG_5535.jpg", completed: false },
-        { name: "Spider (banana spider, black widow, etc.)", image: "IMG_5632.jpg", completed: false },
+        { name: "Spider (banana, black widow, etc.)", image: "IMG_5632.jpg", completed: false },
         { name: "Reptile (turtle, alligator, etc.)", image: "IMG_4896.jpg", completed: false },
         { name: "Mammal (deer, raccoon, etc.)", image: "IMG_1536.jpg", completed: false },
         { name: "Creek", image: "IMG_5501.jpg", completed: false },
