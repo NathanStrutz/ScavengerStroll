@@ -55,6 +55,7 @@ main {
   display: flex;
   height: 60px;
   cursor: pointer;
+  line-height: 44px;
 }
 .item > * {
   margin-right: 0.3em;

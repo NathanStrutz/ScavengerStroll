@@ -8,7 +8,6 @@
 ## TO DO:
 
 - Click an image to zoom in
-- Vertically center ~~checkboxes and~~ text (almost there!)
 - Fireworks - celebrate!
 
 ### Then...
