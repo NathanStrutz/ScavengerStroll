@@ -7,8 +7,7 @@
 
 ## TO DO:
 
-- Click an image to zoom in
-- Fireworks - celebrate!
+- Fireworks - celebrate when you win!
 
 ### Then...
 
