@@ -2,7 +2,7 @@
 const ScavengerItem = Vue.component("ScavengerItem", {
   template: `
     <div :class="itemClasses" @click="select">
-      <a v-if="item.image" :href="'images/fullsize/'+item.image"><img :src="'images/thumbnails/'+item.image" @click="imageClick" /></a>
+      <img :src="'images/thumbnails/'+item.image" :data-original="'images/fullsize/'+item.image" @click="imageClick" />
       <span v-else class="no-image"></span>
       <input type="checkbox" :checked="item.completed" :class="{complete: item.completed}" />
       <span :class="{complete: item.completed}">{{ item.name }}</span>
