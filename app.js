@@ -2,7 +2,7 @@
 const ScavengerItem = Vue.component("ScavengerItem", {
   template: `
     <div :class="itemClasses" @click="select">
-      <img :src="'images/thumbnails/'+item.image" :data-original="'images/fullsize/'+item.image" @click="imageClick" />
+      <a class="zoom" v-if="item.image" :href="'images/fullsize/'+item.image"><img :src="'images/thumbnails/'+item.image" @click="imageClick" /></a>
       <span v-else class="no-image"></span>
       <input type="checkbox" :checked="item.completed" :class="{complete: item.completed}" />
       <span :class="{complete: item.completed}">{{ item.name }}</span>
@@ -169,3 +169,9 @@ new Vue({
     },
   },
 });
+
+// Image zoom via Zooming - https://github.com/kingdido999/zooming/
+new Zooming({
+  bgColor: "rgba(0, 0, 0, 0.85)",
+  transitionDuration: 0.3
+}).listen("a.zoom img")
