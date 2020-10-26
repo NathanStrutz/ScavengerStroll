@@ -56,12 +56,14 @@ main {
   height: 60px;
   cursor: pointer;
   line-height: 44px;
+  padding: 0.5rem;
 }
 .item > * {
   margin-right: 0.3em;
 }
-.item label {
-  vertical-align: middle;
+.item span {
+  white-space: nowrap;
+  min-width: 100px;
 }
 
 .item img,
