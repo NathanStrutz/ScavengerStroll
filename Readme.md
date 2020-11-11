@@ -8,6 +8,7 @@
 ## TO DO:
 
 - Fireworks - celebrate when you win!
+- Fix image zooming on iPhone Safari
 
 ### Then...
 
