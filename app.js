@@ -163,6 +163,7 @@ new Vue({
     itsPartyTime() {
       // this.isPartyTime = true;
       console.log("Celebrate");
+      window.alert("You found them all, congratulations!");
     },
     itsNotPartyTime() {
       // this.isPartyTime = false;
