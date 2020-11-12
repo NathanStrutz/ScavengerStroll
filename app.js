@@ -135,6 +135,11 @@ const NatureScavengerItems = Vue.component("NatureScavengerItems", {
       ],
     };
   },
+  methods: {
+    selectedItem(item) {
+      console.log("nomix: Is Finished?", this.randomItems.filter((it) => !it.completed).length, "/", this.randomItems.length);
+    },
+  },
 });
 
 new Vue({
