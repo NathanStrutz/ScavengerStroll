@@ -132,11 +132,6 @@ const NatureScavengerItems = Vue.component("NatureScavengerItems", {
       ],
     };
   },
-  methods: {
-    selectedItem(item) {
-      console.log("nomix: Is Finished?", this.randomItems.filter((it) => !it.completed).length, "/", this.randomItems.length);
-    },
-  },
 });
 
 new Vue({
@@ -172,10 +167,10 @@ new Vue({
       console.log("Celebrate");
       window.setTimeout(() => {
         window.alert("You found them all, congratulations!");
-        if ("vibrate" in navigator) {
-          navigator.vibrate([100, 100, 300]);
-        }
       }, 100);
+      if ("vibrate" in navigator) {
+        navigator.vibrate([75, 100, 350]);
+      }
     },
     itsNotPartyTime() {
       // this.isPartyTime = false;
