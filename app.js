@@ -166,11 +166,11 @@ new Vue({
       // this.isPartyTime = true;
       console.log("Celebrate");
       window.setTimeout(() => {
+        if ("vibrate" in navigator) {
+          navigator.vibrate([75, 100, 325]);
+        }
         window.alert("You found them all, congratulations!");
       }, 100);
-      if ("vibrate" in navigator) {
-        navigator.vibrate([75, 100, 350]);
-      }
     },
     itsNotPartyTime() {
       // this.isPartyTime = false;
