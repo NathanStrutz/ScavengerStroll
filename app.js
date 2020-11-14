@@ -2,7 +2,9 @@
 const ScavengerItem = Vue.component("ScavengerItem", {
   template: `
     <div :class="itemClasses" @click="select">
-      <img v-if="item.image" :src="'images/thumbnails/'+item.image" :data-original="'images/fullsize/'+item.image" class="zoom" @click="imageClick" />
+      <a v-if="item.image" :href="'images/fullsize/'+item.image" class="zoom" @click="imageClick">
+        <img :src="'images/thumbnails/'+item.image" />
+      </a>
       <span v-else class="no-image"></span>
       <input type="checkbox" :checked="item.completed" :class="{complete: item.completed}" />
       <span :class="{complete: item.completed}">{{ item.name }}</span>
@@ -96,11 +98,6 @@ const ParkScavengerItems = Vue.component("ParkScavengerItems", {
       ],
     };
   },
-  methods: {
-    selectedItem(item) {
-      console.log("nomix: Is Finished?", this.randomItems.filter((it) => !it.completed).length, "/", this.randomItems.length);
-    },
-  },
 });
 
 const NatureScavengerItems = Vue.component("NatureScavengerItems", {
@@ -182,7 +179,14 @@ new Vue({
 });
 
 // Image zoom via Zooming - https://github.com/kingdido999/zooming/
-new Zooming({
-  bgColor: "rgba(0, 0, 0, 0.85)",
-  transitionDuration: 0.3,
-}).listen("img.zoom");
+if (typeof Zooming !== "undefined") {
+  new Zooming({
+    bgColor: "rgba(0, 0, 0, 0.85)",
+    transitionDuration: 0.3,
+  }).listen("a.zoom img");
+}
+
+// Image zoom via SimpleLightbox - https://simplelightbox.com/
+if (typeof SimpleLightbox !== "undefined") {
+  let lightbox = new SimpleLightbox("a.zoom", { nav: false, captions: false, close: false });
+}
