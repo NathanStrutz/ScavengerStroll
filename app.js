@@ -170,21 +170,18 @@ new Vue({
     itsPartyTime() {
       // this.isPartyTime = true;
       console.log("Celebrate");
-      window.alert("You found them all, congratulations!");
+      window.setTimeout(() => {
+        window.alert("You found them all, congratulations!");
+        if ("vibrate" in navigator) {
+          navigator.vibrate([100, 100, 300]);
+        }
+      }, 100);
     },
     itsNotPartyTime() {
       // this.isPartyTime = false;
     },
   },
 });
-
-// Image zoom via Zooming - https://github.com/kingdido999/zooming/
-if (typeof Zooming !== "undefined") {
-  new Zooming({
-    bgColor: "rgba(0, 0, 0, 0.85)",
-    transitionDuration: 0.3,
-  }).listen("a.zoom img");
-}
 
 // Image zoom via SimpleLightbox - https://simplelightbox.com/
 if (typeof SimpleLightbox !== "undefined") {
