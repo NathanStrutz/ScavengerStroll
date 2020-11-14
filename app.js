@@ -126,7 +126,7 @@ const NatureScavengerItems = Vue.component("NatureScavengerItems", {
         { name: "Spanish moss", image: "IMG_5503.jpg", completed: false },
         { name: "Bird's nest", image: "IMG_1557.jpg", completed: false },
         { name: "Insect (dragonfly, fly, etc.)", image: "IMG_5438.jpg", completed: false },
-        { name: "Algea", image: "IMG_5006.jpg", completed: false },
+        { name: "Algae", image: "IMG_5006.jpg", completed: false },
         { name: "Tree", image: "IMG_5591.jpg", completed: false },
         { name: "Rock", image: "IMG_5578.jpg", completed: false },
         { name: "Cyprus knees", image: "IMG_5571.jpg", completed: false },
