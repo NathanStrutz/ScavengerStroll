@@ -5,12 +5,8 @@
 ![image](./images/quadpod.png)
 ![image](./images/fullsize/IMG_5435.jpg)
 
-## TO DO:
+This web site is hosted here on GitHub Pages: https://nathanstrutz.github.io/ScavengerStroll/ and at its primary home: https://wannamaker-scavenger-stroll-2020.netlify.app/
 
-- Fireworks - celebrate when you win!
+We have physical signs in [Wannamaker Park](https://ccprc.com/1737/Wannamaker-County-Park) with this QR code that point to our [Netlify hosted site](https://wannamaker-scavenger-stroll-2020.netlify.app/).
 
-### Then...
-
-- Get hosting
-- Publish it online
-- Put on cool shades and smile
+![qr code link to our web site](./images/QRcode.png)
