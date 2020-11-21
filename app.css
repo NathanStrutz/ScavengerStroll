@@ -112,4 +112,10 @@ footer {
     font-size: 20pt;
     line-height: 40pt;
   }
+  header img:first-of-type {
+    margin-left: -10px;
+  }
+  header img:last-of-type {
+    margin-right: -10px;
+  }
 }
