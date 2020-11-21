@@ -139,18 +139,11 @@ new Vue({
   template: `
     <div>
       <component :is="pageComponent" @notCompleted="itsNotPartyTime" @completed="itsPartyTime" />
-      <firework-party :party-time="isPartyTime" />
     </div>
   `,
   components: {
     ParkScavengerItems,
     NatureScavengerItems,
-    FireworkParty,
-  },
-  data() {
-    return {
-      isPartyTime: false,
-    };
   },
   computed: {
     pageComponent() {
@@ -164,13 +157,57 @@ new Vue({
   methods: {
     itsPartyTime() {
       // this.isPartyTime = true;
-      console.log("Celebrate");
-      window.setTimeout(() => {
-        if ("vibrate" in navigator) {
-          navigator.vibrate([75, 100, 325]);
-        }
-        window.alert("You found them all, congratulations!");
-      }, 100);
+      console.log("Celebrate!");
+
+      // Let's make a delay counter
+      const Iterator = function () {
+        let index = 0;
+        return () => index++ * (Math.random() * 400);
+      };
+      // call delay() to get the next random delay value
+      const delay = new Iterator();
+
+      // function to choose randomly between a selection
+      const randomOf = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+      // let screenX = window.innerWidth * window.devicePixelRatio;
+      // let screenY = window.innerWidth * window.devicePixelRatio;
+
+      // shoot fireworks with delays
+      const shoot = () =>
+        window.setTimeout(() => {
+          let fireworkSize = 300 / window.devicePixelRatio;
+
+          let xy = {
+            x: Math.random() * (window.innerWidth - fireworkSize) + fireworkSize / 2,
+            y: Math.random() * (window.innerHeight - fireworkSize) + fireworkSize / 2,
+          };
+          // console.log("xy", xy);
+          fireworks({
+            x: xy.x,
+            y: xy.y,
+            canvasWidth: fireworkSize,
+            canvasHeight: fireworkSize,
+            colors: randomOf([
+              ["#e63946", "#f1faee", "#a8dadc"],
+              ["#264653", "#2a9d8f", "#e9c46a"],
+              ["#cb997e", "#eddcd2", "#a5a58d"],
+              ["#003049", "#d62828", "#f77f00"],
+              ["#240046", "#3c096c", "#7b2cbf"],
+              ["#660708", "#a4161a", "#e5383b"],
+              ["#006400", "#008000", "#70e000"],
+              ["#147df5", "#0000ff", "#000052"],
+            ]),
+          });
+          if ("vibrate" in navigator) {
+            navigator.vibrate([125]);
+          }
+        }, delay());
+
+      // And then let's do it a number of times!
+      for (let i = 0; i <= 8; i++) {
+        shoot();
+      }
     },
     itsNotPartyTime() {
       // this.isPartyTime = false;
